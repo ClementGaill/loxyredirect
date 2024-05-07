@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection de dispositif</title>
+    <script>
+        // Fonction pour détecter le type de dispositif
+        function detecterDispositif() {
+            // Récupérer l'agent utilisateur
+            var agentUtilisateur = navigator.userAgent.toLowerCase();
+            
+            // Vérifier s'il s'agit d'un dispositif Android
+            if (agentUtilisateur.indexOf("android") > -1) {
+                // Rediriger vers la page spécifique Android
+                window.location.href = "page_android.html";
+            } else {
+                // Rediriger vers www.loxy-app.com pour tout autre dispositif
+                window.location.href = "http://www.loxy-app.com";
+            }
+        }
+        
+        // Appeler la fonction de détection au chargement de la page
+        window.onload = detecterDispositif;
+    </script>
+</head>
+<body>
+    <!-- Contenu de secours si JavaScript est désactivé -->
+    <noscript>
+        <p>Veuillez activer JavaScript pour utiliser cette application.</p>
+    </noscript>
+</body>
+</html>
